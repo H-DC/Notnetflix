@@ -2,7 +2,7 @@
 
 - Demo: https://notnetflix.herokuapp.com/
 
-This project is a simplified front end clone of Netflix. It was created with React and CSS (Grid and Flexbox). It uses [The MovieDB Api](https://www.themoviedb.org/documentation/api) to search for movies and display details. Feel free to contribute!
+This project is a simplified version of the french front end of Netflix. It was created with React and CSS. Data are provided by [The MovieDB Api](https://www.themoviedb.org/documentation/api) an Api Key is requiered to use it.
 
 ### Tools used:
 - React
