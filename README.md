@@ -5,6 +5,12 @@
 This project is a simplified version of the french front end of Netflix. It was created with React and CSS. Data are provided by [The MovieDB Api](https://www.themoviedb.org/documentation/api) an Api Key is requiered to use it.
 
 ### Tools used:
+functionalities :
+- Get last datas with "themoviedatabase"
+- Scroll movies with arrows at the sides of the screen
+- Show details and movie trailer on hover
+
+### Tools used:
 - React
 - react-youtube
 - movie-trailer
