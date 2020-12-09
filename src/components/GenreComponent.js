@@ -8,7 +8,7 @@ import { MdChevronLeft } from "react-icons/md";
 var tmdbUrl = 'https://image.tmdb.org/t/p/original/';
 
 
-function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeave}) {
+function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeave, handleLeavePoster}) {
     
     
     const [moviesList, setMoviesList] = useState([]);
@@ -27,7 +27,6 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
     
     useEffect(()=>{
         let fetchUrl = async()=>{
-            console.log("fetch")
             let res = await fetch(urlToFetch);
             let body = await res.json();
             let numOfMovies = body.results.length;
@@ -61,7 +60,7 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
                 <div className={isBigPoster?"movieCard":"movieCard movieCardLabel"}>
 
                         <img className={posterClass} src={isBigPoster?tmdbUrl+e.poster_path:tmdbUrl+e.backdrop_path} 
-                        alt={e.name} onMouseEnter={(evt)=>handleHover({isBigPoster,movieData:e,evt})} />
+                        alt={e.name} onMouseEnter={(evt)=>handleHover({isBigPoster,movieData:e,evt})} onMouseLeave={()=>handleLeavePoster()}/>
                         {!isBigPoster?
                         <div className="posterLabel">
                             <span style={{marginBottom:'0.2rem'}}>{(e.name||e.original_name||e.original_title||e.title).slice(0,20)} &middot; {e.first_air_date||e.release_date}</span>

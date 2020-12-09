@@ -6,7 +6,9 @@ import NavComponent from './components/NavComponent';
 import OverlayComponent from './components/OverlayComponent';
 
 
-import requests from './request'
+import requests from './request';
+
+var timeout;
 
 function App() {
 
@@ -28,13 +30,19 @@ function App() {
   let handleHover = (data)=>{
     setIsHover(true);
     setOverlayData(data);
-    setTimeout(()=>{setTrigger(true)},800);
+    timeout = setTimeout(()=>{setTrigger(true)},800);
   }
 
   let handleLeave = ()=> {
     setIsHover(false);
+    clearTimeout(timeout);
     setIsOverlay(false);
     setOverlayData(null);
+  }
+
+  let handleLeavePoster = ()=> {
+    setIsHover(false);
+    clearTimeout(timeout);
   }
 
   return (
@@ -42,10 +50,10 @@ function App() {
       <NavComponent/>
       <HeaderComponent/>
       <div id="mainBoard">
-        <GenreComponent genre="Trending Now" urlToFetch={requests.urlTrending} handleHover={handleHover} handleLeave={handleLeave} isBigPoster={false} />
-        <GenreComponent genre="Action Movies" urlToFetch={requests.urlActionMovies} handleHover={handleHover} handleLeave={handleLeave} isBigPoster={false} />
-        <GenreComponent genre="Netflix Originals" urlToFetch={requests.urlNetflix}  handleHover={handleHover} handleLeave={handleLeave} isBigPoster/>
-        <GenreComponent genre="Comedies" urlToFetch={requests.urlComedyMovies} handleHover={handleHover} handleLeave={handleLeave} isBigPoster={false} />
+        <GenreComponent genre="Trending Now" urlToFetch={requests.urlTrending} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
+        <GenreComponent genre="Action Movies" urlToFetch={requests.urlActionMovies} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
+        <GenreComponent genre="Netflix Originals" urlToFetch={requests.urlNetflix}  handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster/>
+        <GenreComponent genre="Comedies" urlToFetch={requests.urlComedyMovies} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
       </div>
       {((overlayData!=null)&&isOverlay)?<OverlayComponent overlayData={overlayData} handleLeave={handleLeave}/>:null}
     </div>
