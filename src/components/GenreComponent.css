@@ -87,10 +87,14 @@
 
 .rightArrow{
     right:0;
+    background:linear-gradient(90deg, transparent, #000); 
+    border-radius: 0.3rem 0rem 0rem 0.3rem;
 }
 
 .leftArrow{
     left:0;
+    background:linear-gradient(90deg, #000,transparent); 
+    border-radius: 0rem 0.3rem 0.3rem 0rem;
 }
 
 .bigArrow {

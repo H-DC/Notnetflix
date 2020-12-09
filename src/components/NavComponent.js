@@ -12,7 +12,7 @@ function NavComponent() {
 
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
-            if((window.scrollY>350)){
+            if((window.scrollY>160)){
                 setIsDarkNavBar(true);
             }else  {
                 setIsDarkNavBar(false);
