@@ -10,6 +10,7 @@ import { MdAutorenew, MdPlayArrow } from "react-icons/md";
 import { MdExpandMore } from "react-icons/md";
 
 var tmdbUrl = 'https://image.tmdb.org/t/p/original/';
+let remUnit = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 function OverlayComponent({ handleLeave, overlayData:{isBigPoster,movieData,evt}}) {
 
@@ -17,11 +18,11 @@ function OverlayComponent({ handleLeave, overlayData:{isBigPoster,movieData,evt}
 
   let topPosition = evt.target.getBoundingClientRect().top+window.scrollY;
   let leftPosition = evt.target.getBoundingClientRect().left+window.scrollX;
-  let posterClass = isBigPoster?"bigMoviePoster":"moviePoster";
+  let posterClass = isBigPoster?"bigMoviePoster":"moviePosterOverlay";
 
   const playerOpt = {
-    width:'100%',
-    height: 'auto',
+    width: 18*remUnit,
+    height: 10*remUnit,
     playerVars: {
       autoplay: 1,
     },
@@ -63,7 +64,7 @@ function OverlayComponent({ handleLeave, overlayData:{isBigPoster,movieData,evt}
                   <span className="overlayText">1h {Math.floor(Math.random()*40)+20}m </span>
                 </div>
                 <div className="overlayTextContainer">
-                  <span className="overlayText">{(movieData.name||movieData.original_name||movieData.original_title||movieData.title).slice(0,18)} &middot; {movieData.first_air_date||movieData.release_date}</span>
+                  <span className="overlayText">{(movieData.name||movieData.original_name||movieData.original_title||movieData.title).slice(0,18)} &middot; {(movieData.first_air_date||movieData.release_date).slice(0,4)}</span>
                 </div>
             </div>
         );

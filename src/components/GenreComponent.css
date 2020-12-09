@@ -58,8 +58,13 @@
     align-items: center;
     text-align: center;
     padding: 0rem 0.5rem;
+}
+
+.posterLabelSpan{
     font-size: 0.8rem;
+    font-weight: bold;
     color: rgb(185, 185, 185);
+    margin-bottom:0.2rem;
 }
 
 .arrow{

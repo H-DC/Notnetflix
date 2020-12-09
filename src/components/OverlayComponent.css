@@ -85,6 +85,14 @@
     border: 1px solid #c7c7c7 ;
 }
 
+.moviePosterOverlay {
+    object-fit: cover;
+    width: 18rem;
+    height: 10rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease-out;
+}
+
 @keyframes fadein {
     0% {
     transform: scale(1);

@@ -63,7 +63,7 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
                         alt={e.name} onMouseEnter={(evt)=>handleHover({isBigPoster,movieData:e,evt})} onMouseLeave={()=>handleLeavePoster()}/>
                         {!isBigPoster?
                         <div className="posterLabel">
-                            <span style={{marginBottom:'0.2rem'}}>{(e.name||e.original_name||e.original_title||e.title).slice(0,20)} &middot; {e.first_air_date||e.release_date}</span>
+                            <span className="posterLabelSpan">{(e.name||e.original_name||e.original_title||e.title).slice(0,20)} &middot; {(e.first_air_date||e.release_date).slice(0,4)}</span>
                         </div>:null}
 
                 </div>
