@@ -1,0 +1,62 @@
+#netflixImg {
+    margin-left: 3rem;
+    width: 6rem;
+    height: auto;
+    margin-right: 2rem;
+}
+
+#accountImg {
+    height: 2rem;
+    width: auto;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+#navDropDown {
+    font-size: 1.5rem;
+    margin-right: 3rem;
+    transition: color 0.3s ease-out;
+    cursor: pointer;
+}
+
+.navContainer {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    transition: all 0.4s ease-in;
+}
+
+.navBgGradient {
+    background: linear-gradient( #141414, transparent);
+}
+
+.navBgDark {
+    background: #141414;
+}
+
+.navBox{
+    display: flex;
+    align-items: center;
+}
+
+.navBtn {
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease-out;
+    cursor: pointer;
+}
+
+.navBtn:hover , #navDropDown:hover {
+    color: #dadadab3;
+}
+
+#homeBtn {
+    font-weight: bold;
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+    cursor:default;
+}

@@ -1,0 +1,111 @@
+.genreContainer {
+    position: relative;
+    padding: 1.5rem 3rem 0rem 3rem;
+    overflow: hidden;
+    /* overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;   IE and Edge
+    scrollbar-width: none;  Firefox */
+}
+
+/* .genreContainer::-webkit-scrollbar {
+    display: none;
+  } */
+
+.genreTitle{
+    height:2rem;
+    font-size:1.3rem;
+}  
+
+.moviesContainer {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.movieCard {
+    border-radius: 0.3rem;
+    margin-right: 0.2rem;
+    transition: all 0.3s ease-out
+}
+
+.movieCardLabel:hover {
+    background-color: rgba(194, 194, 194, 0.1);
+}
+
+.moviePoster {
+    object-fit: cover;
+    width: 17.8rem;
+    height: 10rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.bigMoviePoster {
+    object-fit: cover;
+    height: 20rem;
+    width: 13.3rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.posterLabel {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+    color: rgb(185, 185, 185);
+}
+
+.arrow{
+    position: absolute;
+    top:3.5rem;
+    background-color:transparent;
+    color: transparent;
+    transition: all 0.2s ease-out;
+    outline: none;
+    border: none;
+    width: 5rem;
+    font-weight: bolder;
+    border-radius: 0.3rem;
+}
+
+.arrow:hover {
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+}
+
+.rightArrow{
+    right:0;
+}
+
+.leftArrow{
+    left:0;
+}
+
+.bigArrow {
+    height: 20rem;
+}
+
+.normalArrow {
+    height: 10rem;
+}
+
+.moviesContainer:hover ~ .arrow {
+    color: white;
+}
+
+/* go Use SVG */
+.chevronSvg{
+    font-size: 2.5rem;
+    transition: all 0.1s ease-out;
+}
+
+.arrow:hover > .chevronSvg {
+    font-size: 3.5rem;
+}
