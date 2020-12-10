@@ -13,14 +13,17 @@ function HeaderComponent() {
         let fetchUrl = async()=>{
             let res = await fetch(requests.urlNetflix);
             let body = await res.json();
-            let randomIndex = Math.floor(Math.random()*body.results.length);
-            setMovie(body.results[randomIndex]);
+            if(body.results){
+                let randomIndex = Math.floor(Math.random()*body.results.length);
+                setMovie(body.results[randomIndex]);
+            }
         }
         fetchUrl();
     },[])
 
     let title = movie.title?movie.title:
-                    movie.name?movie.name:movie.original_name;
+                    movie.name?movie.name:
+                        movie.original_name?movie.original_name:"";
     
     let description = movie.overview?movie.overview.substr(0,150)+'...':"";
 

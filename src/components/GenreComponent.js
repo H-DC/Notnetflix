@@ -36,9 +36,11 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
         let fetchUrl = async()=>{
             let res = await fetch(urlToFetch);
             let body = await res.json();
-            let numOfMovies = body.results.length;
-            setMoviesList(body.results)
-            calcScrollWidth(numOfMovies)
+            if(body.results){
+                let numOfMovies = body.results.length;
+                setMoviesList(body.results)
+                calcScrollWidth(numOfMovies)
+            }
         }
         fetchUrl();
     },[])
