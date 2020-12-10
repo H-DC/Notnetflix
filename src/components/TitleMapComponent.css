@@ -1,0 +1,26 @@
+
+.mapContainer {
+    margin-right: 2rem;
+}
+
+.mapNotSelect{
+    color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.2rem;
+}
+
+.mapSelect {
+    color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.2rem;
+}
+
+.genreContainer:hover > .titleContainer > .mapContainer > .mapNotSelect  {
+    color: rgb(151, 151, 151);
+}
+
+.genreContainer:hover > .titleContainer > .mapContainer > .mapSelect  {
+    color: #fff;
+}

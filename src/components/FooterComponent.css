@@ -22,12 +22,18 @@
 
 .linkParagraph > p {
     margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.linkParagraph > p:hover {
+    text-decoration: underline;
 }
 
 .footerIcon {
     margin-right: 1rem;
     margin-bottom: 1rem;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 #footerDisclamer {

@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 
+
+import TitleMapComponent from './TitleMapComponent';
+
 import './GenreComponent.css';
 
 import { MdChevronRight } from "react-icons/md";
@@ -14,6 +17,8 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
     const [moviesList, setMoviesList] = useState([]);
     const [xPosition, setXposition] = useState(0);
     const [vwToEnd,setVwToEnd] = useState(30);
+    const [mapLength, setMaplength] = useState(0);
+    const [mapPos, setMapPos] = useState(0);
     
     let calcScrollWidth = (numOfMovies) => {
         let remUnit = parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -22,7 +27,9 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
         let numberOfBigCardDisp = fullVw / (remUnit*13.5);
         let vwUnitToEnd = (100*numOfMovies/numberOfCardDisp)-92;
         let vwUnitToEndBig = (100*numOfMovies/numberOfBigCardDisp)-92;
-        setVwToEnd(isBigPoster?vwUnitToEndBig:vwUnitToEnd)
+        setVwToEnd(isBigPoster?vwUnitToEndBig:vwUnitToEnd);
+        let titleMapLen = isBigPoster?Math.ceil((vwUnitToEndBig+92)/100):Math.ceil((vwUnitToEnd+92)/100);
+        setMaplength(titleMapLen);
     }
     
     useEffect(()=>{
@@ -39,13 +46,14 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
     let arrowOnClick = (value) => {
         calcScrollWidth(moviesList.length);
         let newXpos = value + xPosition;
+        newXpos>xPosition?setMapPos(mapPos+1):setMapPos(mapPos-1);
         if (newXpos<0){
             newXpos=0;
         } else if (newXpos>vwToEnd){
             newXpos=vwToEnd;
         }
         setXposition(newXpos);
-        console.log(newXpos,vwToEnd);
+        console.log(genre,mapLength-mapPos-1);
     }
     
     let posterClass = isBigPoster?"bigMoviePoster":"moviePoster";
@@ -53,8 +61,11 @@ function GenreComponent({genre, urlToFetch, isBigPoster, handleHover, handleLeav
     let leftArrowClass = isBigPoster?"arrow leftArrow bigArrow":"arrow leftArrow normalArrow";
     
     return (
-        <div className="genreContainer">
-        <h2 className="genreTitle">{genre}</h2>
+    <div className="genreContainer">
+        <div className="titleContainer">
+            <h2 className="genreTitle">{genre}<MdChevronRight className="genreTitleChevron"/></h2>
+            <TitleMapComponent mapLength={mapLength} mapPos={mapPos}/>
+        </div>
         <div className="moviesContainer" style={{transform: `translateX(-${xPosition}vw)`}}>
             {moviesList.map((e,i)=>(
                 <div className={isBigPoster?"movieCard":"movieCard movieCardLabel"}>
