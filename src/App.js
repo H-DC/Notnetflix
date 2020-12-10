@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react';
 import './App.css';
+import FooterComponent from './components/FooterComponent';
 import GenreComponent from './components/GenreComponent';
 import HeaderComponent from './components/HeaderComponent';
 import NavComponent from './components/NavComponent';
@@ -55,6 +56,7 @@ function App() {
         <GenreComponent genre="Netflix Originals" urlToFetch={requests.urlNetflix}  handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster/>
         <GenreComponent genre="Comedies" urlToFetch={requests.urlComedyMovies} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
       </div>
+      <FooterComponent/>
       {((overlayData!=null)&&isOverlay)?<OverlayComponent overlayData={overlayData} handleLeave={handleLeave}/>:null}
     </div>
   );
