@@ -51,10 +51,10 @@ function App() {
       <NavComponent/>
       <HeaderComponent/>
       <div id="mainBoard">
-        <GenreComponent genre="Trending Now" urlToFetch={requests.urlTrending} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
+        <GenreComponent genre="Comedies" urlToFetch={requests.urlComedyMovies} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
         <GenreComponent genre="Action Movies" urlToFetch={requests.urlActionMovies} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
         <GenreComponent genre="Netflix Originals" urlToFetch={requests.urlNetflix}  handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster/>
-        <GenreComponent genre="Comedies" urlToFetch={requests.urlComedyMovies} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
+        <GenreComponent genre="Trending Now" urlToFetch={requests.urlTrending} handleHover={handleHover} handleLeave={handleLeave} handleLeavePoster={handleLeavePoster} isBigPoster={false} />
       </div>
       <FooterComponent/>
       {((overlayData!=null)&&isOverlay)?<OverlayComponent overlayData={overlayData} handleLeave={handleLeave}/>:null}
