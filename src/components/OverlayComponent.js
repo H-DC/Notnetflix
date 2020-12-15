@@ -64,7 +64,7 @@ function OverlayComponent({ handleLeave, overlayData:{isBigPoster,movieData,evt}
                   <span className="overlayText">1h {Math.floor(Math.random()*40)+20}m </span>
                 </div>
                 <div className="overlayTextContainer">
-                  <span className="overlayText">{(movieData.name||movieData.original_name||movieData.original_title||movieData.title).slice(0,18)} &middot; {(movieData.first_air_date||movieData.release_date).slice(0,4)}</span>
+                  <span className="overlayText">{(movieData.name||movieData.original_name||movieData.original_title||movieData.title).slice(0,35)} &middot; {(movieData.first_air_date||movieData.release_date).slice(0,4)}</span>
                 </div>
             </div>
         );
