@@ -27,14 +27,14 @@ function NavComponent() {
   return (
     <div className={navBgClass}>
         <div className="navBox">
-            <img src={netflixImg} id="netflixImg"/>
+            <img src={netflixImg} id="netflixImg" alt="Notflix"/>
             <span id="homeBtn">Home</span>
             <span className="navBtn">TV Shows</span>
             <span className="navBtn">Movies</span>
         </div>
         <div className="navBox">
             <span className="navBtn">KIDS</span>
-            <img src={accountImg} id="accountImg"/>
+            <img src={accountImg} id="accountImg" alt="profil"/>
             <MdArrowDropDown id="navDropDown"/>
         </div>
     </div>

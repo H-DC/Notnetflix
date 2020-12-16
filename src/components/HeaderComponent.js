@@ -33,8 +33,8 @@ function HeaderComponent() {
             <h1 className="bannerTitle">{title}</h1>
             <h2 className="bannerDesc">{description}</h2>
             <div className='btnDiv'>
-                <button id="playBtn"><img src={playIcon} className="btnIcon" /><span>Play</span></button>
-                <button id="infoBtn"><img src={infoIcon} className="btnIcon" /><span>More info</span></button>
+                <button id="playBtn"><img src={playIcon} className="btnIcon" alt=""/><span>Play</span></button>
+                <button id="infoBtn"><img src={infoIcon} className="btnIcon" alt=""/><span>More info</span></button>
             </div>
             <div className="bottomGradient"/>
         </div>

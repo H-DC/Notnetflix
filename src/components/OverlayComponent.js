@@ -6,7 +6,7 @@ import './OverlayComponent.css';
 
 import { HiOutlineThumbUp } from "react-icons/hi";
 import { HiOutlineThumbDown } from "react-icons/hi";
-import { MdAutorenew, MdPlayArrow } from "react-icons/md";
+import { MdPlayArrow } from "react-icons/md";
 import { MdExpandMore } from "react-icons/md";
 
 var tmdbUrl = 'https://image.tmdb.org/t/p/original/';
