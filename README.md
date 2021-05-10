@@ -10,7 +10,7 @@ functionalities :
 - Scroll movies with arrows at the sides of the screen
 - Show details and movie trailer on hover
 
-### Tools used:
+### Packages used:
 - React
 - react-youtube
 - movie-trailer
