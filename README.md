@@ -1,6 +1,6 @@
 # Netflix Clone
 
-- Demo: https://notnetflix.herokuapp.com/
+- Demo: https://hdc-notnetflix.netlify.app/
 
 This project is a simplified version of the french front end of Netflix. It was created with React and CSS. Data are provided by [The MovieDB Api](https://www.themoviedb.org/documentation/api) an Api Key is requiered to use it.
 
